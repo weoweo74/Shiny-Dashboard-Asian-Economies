@@ -9,28 +9,7 @@
 
 server <- function(input, output, session) {
   
-  # Password and T&Cs Pop-up Box ---------------------------------------------------------
-    
-  # show modalDialog on app start-up
-  showModal(modal())  
-  
-  # check password and render UI if correct
-  observeEvent(
-    
-    eventExpr = input$`pwd-submit`,
-    
-    handlerExpr = {
-      
-      # store hash of password in a 'veneer' of security
-      if (input$password == "incorrect") {
-        removeModal()
-      } else {
-        showModal(modal(failed = TRUE))
-      }
-    }
-  )
 
- 
 # --- Reactives --- #
 
   # Reactive: Selected Country on data_consolidate ----------------------------------------------
